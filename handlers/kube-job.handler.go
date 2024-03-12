@@ -43,7 +43,6 @@ func HandleKubeJobPost(w http.ResponseWriter, r *http.Request) {
 	err = job.SpawnBasicJob(parsedBody.Concurrency)
 	if err!=nil{
 		http.Error(w, "failed creating jobs", http.StatusInternalServerError)
-		fmt.Println(err)
 		return
 	}
     // Send a response
